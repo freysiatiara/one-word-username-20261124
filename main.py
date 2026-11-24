@@ -35,7 +35,7 @@ def validate(path=OUTPUT_PATH, username=USERNAME):
         return False
     if content != content.strip():
         return False
-    if " " in content or content.isspace():
+    if any(char.isspace() for char in content):
         return False
     return True
 
